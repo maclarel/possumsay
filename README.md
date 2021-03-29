@@ -1,5 +1,5 @@
 # possumsay
-Because who doesn't love taking possums?
+Because who doesn't love talking possums?
 
 # Usage
 
