@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 input=$@
 
 function print_dashes() {
