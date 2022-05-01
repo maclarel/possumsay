@@ -16,6 +16,7 @@ if [ -z "$input" ]; then
 while read line; do
   input+="$line$NEW_LINE"
 done < /dev/stdin
+input=${input::-2}
 fi
 
 echo "< $input >"
