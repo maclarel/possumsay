@@ -1,6 +1,5 @@
 #!/bin/bash
 input=$@
-NEW_LINE=$'\n'
 
 function print_dashes() {
   len=$(expr $(echo "$1" | wc -c) + 4 )
@@ -13,10 +12,11 @@ function print_dashes() {
 }
 
 if [ -z "$input" ]; then
-while read line; do
-  input+="$line$NEW_LINE"
-done < /dev/stdin
-input=${input::-1}
+  NEW_LINE=$'\n'
+  while read line; do
+    input+="$line$NEW_LINE"
+  done < /dev/stdin
+  input=${input::-1}
 fi
 
 echo "< $input >"
