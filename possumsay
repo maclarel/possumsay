@@ -1,17 +1,25 @@
 #!/bin/bash
 input=$@
+NEW_LINE=$'\n'
 
 function print_dashes() {
   len=$(expr $(echo "$1" | wc -c) + 4 )
   i=0
-  while [ $i -lt $len ]; do
+  while [ $i -lt $len ] && [ $i -lt 80 ]; do
     printf "-"
     let i++
   done
   echo
 }
 
+if [ -z "$input" ]; then
+while read line; do
+  input+="$line$NEW_LINE"
+done < /dev/stdin
+fi
+
 echo "< $input >"
+
 print_dashes "$input"
 cat <<EOF
     \        @@       )@.@)/%@//@)/@@///////#@@/
